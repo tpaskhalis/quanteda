@@ -1,0 +1,640 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Overview | Quantitative Text Analysis with R</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../intro/wordcloud.html" />
+    
+    
+    <link rel="prev" href="../index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="1" data-basepath=".." data-revision="Tue May 05 2015 18:17:05 GMT+0100 (BST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1" data-path="intro/overview.html">
+            
+                
+                    <a href="../intro/overview.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Overview
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="intro/wordcloud.html">
+            
+                
+                    <a href="../intro/wordcloud.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        wordcloud
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro/data.html">
+            
+                
+                    <a href="../intro/data.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Data package
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chap1/corpus.html">
+            
+                
+                    <a href="../chap1/corpus.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Corpus Sources
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chap1/fromfiles.html">
+            
+                
+                    <a href="../chap1/fromfiles.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Importing from filesystem
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chap1/fromtwitter.html">
+            
+                
+                    <a href="../chap1/fromtwitter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Text from a twitter search
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Quantitative Text Analysis with R</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="quanteda-quantitative-analysis-of-textual-data">quanteda: Quantitative Analysis of Textual Data</h1>
+<p>An R package for managing and analyzing text, by Ken Benoit and Paul Nulty.</p>
+<p>quanteda makes it easy to manage texts in the form of a
+corpus, defined as a collection of texts that includes document-level
+variables specific to each text, as well as meta-data for documents
+and for the collection as a whole. quanteda includes tools to make it
+easy and fast to manuipulate the texts the texts in a corpus, for
+instance by tokenizing them, with or without stopwords or stemming, or
+to segment them by sentence or paragraph units. </p>
+<p>quanteda implements
+bootstrapping methods for texts that makes it easy to resample texts
+from pre-defined units, to facilitate computation of confidence
+intervals on textual statistics using techniques of non-parametric
+bootstrapping, but applied to the original texts as data. quanteda
+includes a suite of sophisticated tools to extract features of the
+texts into a quantitative matrix, where these features can be defined
+according to a dictionary or thesaurus, including the declaration of
+collocations to be treated as single features. </p>
+<p>Once converted into a
+quantitative matrix (known as a &quot;dfm&quot; for document-feature matrix),
+the textual feature can be analyzed using quantitative methods for
+describing, comparing, or scaling texts, or used to train machine
+learning methods for class prediction.</p>
+<h2 id="how-to-install">How to Install</h2>
+<p><code>quanteda</code> can be installed from CRAN, but we recommend you install from GitHub for the latest (dev) version.</p>
+<p>You can download the files and build the package from source, or you can use the devtools library to install the package directly from github.</p>
+<p>This is done as follows:</p>
+<pre><code class="lang-r"><span class="hljs-comment"># devtools required to install quanteda from Github</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">require</span>(devtools)) install.packages(<span class="hljs-string">&quot;devtools&quot;</span>)
+<span class="hljs-keyword">library</span>(devtools)
+<span class="hljs-comment"># install the latest version quanteda from Github</span>
+install_github(<span class="hljs-string">&quot;quanteda&quot;</span>, username=<span class="hljs-string">&quot;kbenoit&quot;</span>, dependencies=<span class="hljs-literal">TRUE</span>, quick=<span class="hljs-literal">TRUE</span>)
+
+<span class="hljs-comment"># to install the latest dev branch version quanteda from Github use:</span>
+install_github(<span class="hljs-string">&quot;quanteda&quot;</span>, username=<span class="hljs-string">&quot;kbenoit&quot;</span>, dependencies=<span class="hljs-literal">TRUE</span>, quick=<span class="hljs-literal">TRUE</span>, ref=<span class="hljs-string">&quot;dev&quot;</span>)
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p>We are working on a package vignette, but for the moment the best documentation is 
+found in the quanteda.pdf document, which is a formatted version of the man files
+available for all of the quanteda functions.</p>
+<p>Examples for any function can also be seen using (for instance, for <code>corpus()</code>):</p>
+<pre><code class="lang-r">example(corpus)
+</code></pre>
+<pre><code>## 
+## corpus&gt; #
+## corpus&gt; # create a corpus from texts
+## corpus&gt; corpus(inaugTexts)
+## Corpus consisting of 57 documents.
+## 
+## corpus&gt; # create a corpus from texts and assign meta-data and document variables
+## corpus&gt; ukimmigCorpus &lt;- corpus(ukimmigTexts,
+## corpus+                             docvars=data.frame(party=names(ukimmigTexts)),
+## corpus+                             enc=&quot;UTF-8&quot;)
+##   note: converted texts from UTF-8 to UTF-8.
+## corpus&gt; ## No test: 
+## corpus&gt; # the fifth column of this csv file is the text field
+## corpus&gt; mytexts &lt;- textfile(&quot;http://www.kenbenoit.net/files/text_example.csv&quot;, textField=5)
+## 
+## corpus&gt; str(mytexts)
+## Formal class &apos;corpusSource&apos; [package &quot;quanteda&quot;] with 4 slots
+##   ..@ texts  : chr &quot;/var/folders/3_/7s7qq3wx08b8htzt5l9sdm6m0000gr/T//RtmpE39x2u/file106179c27c82&quot;
+##   ..@ docvars:&apos;data.frame&apos;:    0 obs. of  0 variables
+## Formal class &apos;data.frame&apos; [package &quot;methods&quot;] with 4 slots
+##   .. .. ..@ .Data    : list()
+##   .. .. ..@ names    : chr(0) 
+##   .. .. ..@ row.names: int(0) 
+##   .. .. ..@ .S3Class : chr &quot;data.frame&quot;
+##   ..@ source : chr(0) 
+##   ..@ created: chr(0) 
+## 
+## corpus&gt; mycorp &lt;- corpus(mytexts)
+## 
+## corpus&gt; mycorp2 &lt;- corpus(textfile(&quot;http://www.kenbenoit.net/files/text_example.csv&quot;, textField=&quot;Title&quot;))
+## 
+## corpus&gt; identical(texts(mycorp), texts(mycorp2))
+## [1] TRUE
+## 
+## corpus&gt; identical(docvars(mycorp), docvars(mycorp2))
+## [1] TRUE
+## 
+## corpus&gt; ## End(No test)
+## corpus&gt; #
+## corpus&gt; ## import a tm VCorpus
+## corpus&gt; if (require(tm)) {
+## corpus+     data(crude)    # load in a tm example VCorpus
+## corpus+     mytmCorpus &lt;- corpus(crude)
+## corpus+     summary(mytmCorpus, showmeta=TRUE)
+## corpus+ 
+## corpus+     tmCorp &lt;- VCorpus(VectorSource(inaugTexts[49:57]))
+## corpus+     quantCorp &lt;- corpus(tmCorp)
+## corpus+     summary(quantCorp)
+## corpus+ }
+## Corpus consisting of 20 documents.
+## 
+##    Text Types Tokens Sentences                    _author
+##   text1    56     90         8                       &lt;NA&gt;
+##   text2   224    439        21 BY TED D&apos;AFFLISIO, Reuters
+##   text3    39     51         4                       &lt;NA&gt;
+##   text4    49     66         6                       &lt;NA&gt;
+##   text5    59     88         3                       &lt;NA&gt;
+##   text6   229    443        25                       &lt;NA&gt;
+##   text7   232    420        23   By Jeremy Clift, Reuters
+##   text8    96    134         9                       &lt;NA&gt;
+##   text9   165    297        22                       &lt;NA&gt;
+##  text10   179    336        20                       &lt;NA&gt;
+##  text11   179    360        23                       &lt;NA&gt;
+##  text12    67     92         3                       &lt;NA&gt;
+##  text13    68    103         7                       &lt;NA&gt;
+##  text14    71     97         4                       &lt;NA&gt;
+##  text15    72    109         4                       &lt;NA&gt;
+##  text16    90    144         9                       &lt;NA&gt;
+##  text17   117    194        13                       &lt;NA&gt;
+##  text18    47     77        12                       &lt;NA&gt;
+##  text19   142    281        12 By BERNICE NAPACH, Reuters
+##  text20    30     43         8                       &lt;NA&gt;
+##       _datetimestamp _description
+##  1987-02-26 17:00:56             
+##  1987-02-26 17:34:11             
+##  1987-02-26 18:18:00             
+##  1987-02-26 18:21:01             
+##  1987-02-26 19:00:57             
+##  1987-03-01 03:25:46             
+##  1987-03-01 03:39:14             
+##  1987-03-01 05:27:27             
+##  1987-03-01 08:22:30             
+##  1987-03-01 18:31:44             
+##  1987-03-02 01:05:49             
+##  1987-03-02 07:39:23             
+##  1987-03-02 07:43:22             
+##  1987-03-02 07:43:41             
+##  1987-03-02 08:25:42             
+##  1987-03-02 11:20:05             
+##  1987-03-02 11:28:26             
+##  1987-03-02 12:13:46             
+##  1987-03-02 14:38:34             
+##  1987-03-02 14:49:06             
+##                                           _heading _id _language
+##           DIAMOND SHAMROCK (DIA) CUTS CRUDE PRICES 127        en
+##    OPEC MAY HAVE TO MEET TO FIRM PRICES - ANALYSTS 144        en
+##          TEXACO CANADA &lt;TXC&gt; LOWERS CRUDE POSTINGS 191        en
+##          MARATHON PETROLEUM REDUCES CRUDE POSTINGS 194        en
+##          HOUSTON OIL &lt;HO&gt; RESERVES STUDY COMPLETED 211        en
+##      KUWAIT SAYS NO PLANS FOR EMERGENCY OPEC TALKS 236        en
+##  INDONESIA SEEN AT CROSSROADS OVER ECONOMIC CHANGE 237        en
+##              SAUDI RIYAL DEPOSIT RATES REMAIN FIRM 242        en
+##            QATAR UNVEILS BUDGET FOR FISCAL 1987/88 246        en
+##    SAUDI ARABIA REITERATES COMMITMENT TO OPEC PACT 248        en
+##     SAUDI FEBRUARY CRUDE OUTPUT PUT AT 3.5 MLN BPD 273        en
+##  GULF ARAB DEPUTY OIL MINISTERS TO MEET IN BAHRAIN 349        en
+##  SAUDI ARABIA REITERATES COMMITMENT TO OPEC ACCORD 352        en
+##   KUWAIT MINISTER SAYS NO EMERGENCY OPEC TALKS SET 353        en
+##           PHILADELPHIA PORT CLOSED BY TANKER CRASH 368        en
+##      STUDY GROUP URGES INCREASED U.S. OIL RESERVES 489        en
+##      STUDY GROUP URGES INCREASED U.S. OIL RESERVES 502        en
+##     UNOCAL &lt;UCL&gt; UNIT CUTS CRUDE OIL POSTED PRICES 543        en
+##       NYMEX WILL EXPAND OFF-HOUR TRADING APRIL ONE 704        en
+##      ARGENTINE OIL PRODUCTION DOWN IN JANUARY 1987 708        en
+##            _origin _topics _lewissplit    _cgisplit _oldid
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   5670
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   5687
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   5734
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   5737
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   5754
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   8321
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   8322
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   8327
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   8331
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET   8333
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12456
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12532
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12535
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12536
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12550
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12672
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12685
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12726
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12887
+##  Reuters-21578 XML     YES       TRAIN TRAINING-SET  12891
+##                                                 _places      _people
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                  canada         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                  c(&quot;kuwait&quot;, &quot;ecuador&quot;)         &lt;NA&gt;
+##                                   c(&quot;indonesia&quot;, &quot;usa&quot;)         &lt;NA&gt;
+##                            c(&quot;bahrain&quot;, &quot;saudi-arabia&quot;)         &lt;NA&gt;
+##                                                   qatar         &lt;NA&gt;
+##                            c(&quot;bahrain&quot;, &quot;saudi-arabia&quot;) hisham-nazer
+##                                c(&quot;saudi-arabia&quot;, &quot;uae&quot;)         &lt;NA&gt;
+##  c(&quot;uae&quot;, &quot;bahrain&quot;, &quot;saudi-arabia&quot;, &quot;kuwait&quot;, &quot;qatar&quot;)         &lt;NA&gt;
+##                            c(&quot;saudi-arabia&quot;, &quot;bahrain&quot;) hisham-nazer
+##                                                  kuwait         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                                     usa         &lt;NA&gt;
+##                                               argentina         &lt;NA&gt;
+##      _orgs _exchanges
+##       &lt;NA&gt;       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##  worldbank       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       opec       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;       &lt;NA&gt;
+##       &lt;NA&gt;      nymex
+##       &lt;NA&gt;       &lt;NA&gt;
+## 
+## Source:  Converted from tm VCorpus &apos;crude&apos;.
+## Created: Tue May  5 18:16:58 2015.
+## Notes:   .
+## 
+## Corpus consisting of 9 documents.
+## 
+##   Text Types Tokens Sentences
+##  text1   842   2431       135
+##  text2   854   2551       127
+##  text3   747   2315       147
+##  text4   598   1597        81
+##  text5   714   2148       111
+##  text6   584   1581        97
+##  text7   724   2070       100
+##  text8   893   2390       119
+##  text9   773   2092        89
+## 
+## Source:  Converted from tm VCorpus &apos;tmCorp&apos;.
+## Created: Tue May  5 18:16:58 2015.
+## Notes:   .
+</code></pre><p>There are also some demo functions that show off some of the package capabilities, such 
+as <code>demo(quanteda)</code>.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(quanteda)
+<span class="hljs-comment"># create a corpus from the immigration texts from UK party platforms</span>
+uk2010immigCorpus &lt;- corpus(uk2010immig,
+                            docvars=data.frame(party=names(uk2010immig)),
+                            notes=<span class="hljs-string">&quot;Immigration-related sections of 2010 UK party manifestos&quot;</span>,
+                            enc=<span class="hljs-string">&quot;UTF-8&quot;</span>)
+</code></pre>
+<pre><code>## Error in corpus(uk2010immig, docvars = data.frame(party = names(uk2010immig)), : object &apos;uk2010immig&apos; not found
+</code></pre><pre><code class="lang-r">uk2010immigCorpus
+</code></pre>
+<pre><code>## Corpus consisting of 9 documents.
+</code></pre><pre><code class="lang-r">summary(uk2010immigCorpus, showmeta=<span class="hljs-literal">TRUE</span>)
+</code></pre>
+<pre><code>## Corpus consisting of 9 documents.
+## 
+##          Text Types Tokens Sentences        party _encoding
+##           BNP   969   2765       130          BNP     UTF-8
+##     Coalition   133    231        12    Coalition     UTF-8
+##  Conservative   234    452        15 Conservative     UTF-8
+##        Greens   301    608        29       Greens     UTF-8
+##        Labour   279    615        29       Labour     UTF-8
+##        LibDem   239    434        22       LibDem     UTF-8
+##            PC    72    101         5           PC     UTF-8
+##           SNP    81    124         4          SNP     UTF-8
+##          UKIP   303    625        41         UKIP     UTF-8
+## 
+## Source:  /Users/kbenoit/Dropbox/QUANTESS/testbook/* on x86_64 by kbenoit.
+## Created: Tue May  5 18:16:36 2015.
+## Notes:   Immigration-related sections of 2010 UK party manifestos.
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># key words in context for &quot;deport&quot;, 3 words of context</span>
+kwic(uk2010immigCorpus, <span class="hljs-string">&quot;deport&quot;</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<pre><code>##                                               preword         word
+##     [BNP, 71]                further immigration, the deportation 
+##    [BNP, 139]                            The BNP will    deport   
+##   [BNP, 1628] long-term resettlement programme.\n\n2.    Deport   
+##   [BNP, 1633]          illegal immigrants\n\nWe shall    deport   
+##   [BNP, 1653]                current unacceptably lax deportation 
+##   [BNP, 1659]                           of people are   deported  
+##   [BNP, 2169]                     enforced by instant deportation,
+##   [BNP, 2180]         British immigration laws.\n\n8. Deportation 
+##   [BNP, 2186]           Foreign Criminals\n\nWe shall    deport   
+##   [BNP, 2198]                       This includes the deportation 
+## [Greens, 566]                      subject to summary deportation.
+## [LibDem, 194]         illegal labour.\n\n- Prioritise deportation 
+## [LibDem, 394]                  flight risks.\n\n- End deportations
+##   [UKIP, 317]                            laws or face deportation.
+##                                   postword
+##     [BNP, 71] of all illegal              
+##    [BNP, 139] all foreigners convicted    
+##   [BNP, 1628] all illegal immigrants\n\nWe
+##   [BNP, 1633] all illegal immigrants      
+##   [BNP, 1653] policies, thousands of      
+##   [BNP, 1659] from the UK                 
+##   [BNP, 2169] for anyone found            
+##   [BNP, 2180] of all Foreign              
+##   [BNP, 2186] all criminal entrants,      
+##   [BNP, 2198] of all Muslim               
+## [Greens, 566] They should receive         
+## [LibDem, 194] efforts on criminals,       
+## [LibDem, 394] of refugees to              
+##   [UKIP, 317] Such citizens will
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># create a dfm, removing stopwords</span>
+mydfm &lt;- dfm(uk2010immigCorpus, stopwords=<span class="hljs-literal">TRUE</span>)
+</code></pre>
+<pre><code>## Creating a dfm from a corpus ...
+##    ... indexing 9 documents
+##    ... tokenizing texts, found 6,141 total tokens
+##    ... cleaning the tokens, 186 removed entirely
+##    ... summing tokens by document
+##    ... indexing 1,587 feature types
+##    ... building sparse matrix
+##    ... created a 9 x 1587 sparse dfm
+##    ... complete. Elapsed time: 0.071 seconds.
+</code></pre><pre><code class="lang-r">dim(mydfm)              <span class="hljs-comment"># basic dimensions of the dfm</span>
+</code></pre>
+<pre><code>## [1]    9 1587
+</code></pre><pre><code class="lang-r">topfeatures(mydfm, <span class="hljs-number">20</span>)  <span class="hljs-comment"># 20 top words</span>
+</code></pre>
+<pre><code>##         the          of         and          to          in          we 
+##         339         228         217         217         117          95 
+##           a        will         for        that immigration          be 
+##          89          86          77          76          66          53 
+##         our          is         are          on          by          as 
+##          53          50          48          48          41          38 
+##     british         all 
+##          37          36
+</code></pre><pre><code class="lang-r">quartz()
+plot(mydfm)             <span class="hljs-comment"># word cloud</span>
+</code></pre>
+<p><img src="figure/quanteda_example-1.png" alt="plot of chunk quanteda_example"> </p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../intro/wordcloud.html" class="navigation navigation-next " aria-label="Next page: wordcloud"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
