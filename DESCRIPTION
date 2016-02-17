@@ -68,6 +68,7 @@ Collate:
     'lexdiv.R'
     'ngrams.R'
     'plots.R'
+    'postag.R'
     'quanteda-package.R'
     'readability.R'
     'resample.R'
