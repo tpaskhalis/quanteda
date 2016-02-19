@@ -129,17 +129,22 @@ mleTokenTag <- function(tokens, tags, alpha = 0.1) {
   if (length(tokens) != length(tags)) {
     stop("Length of tokens vector isn't equal to the length of tags vector.")
   }
-  # dt <- data.table("token" = c(tokens, "OOV"), "tag" = tags)
+  uniquetags <- unique(tags)
   dt <- data.table("token" = tokens, "tag" = tags)
   dt <- dt[, 
            .(countTokenTag = .N), 
            by = list(token, tag)
+           ]
+  temp <- data.table("token" = rep("OOV", length(uniquetags)),
+                     "tag" = uniquetags,
+                     "countTokenTag" = 0)
+  dt <- rbindlist(list(dt, temp))
+  dt <- dt[,
+           c("totalTag", "uniqueWords") := list(sum(countTokenTag), uniqueN(.SD)),
+           by = tag
            ][,
-             c("totalTag", "uniqueWords") := list(sum(countTokenTag), uniqueN(.SD)),
-             by = tag
-             ][,
-               prob := (countTokenTag + alpha)/(totalTag + alpha * uniqueWords)
-               ]
+              prob := (countTokenTag + alpha)/(totalTag + alpha * uniqueWords)
+            ]
   return(dt[, .(token, tag, prob)])
 }
 
@@ -151,7 +156,7 @@ getStateObsProb <- function(state, obs, tab) {
   prob <- tab[token == state & tag == obs, prob]
   if (length(prob) == 0) {
     prob <- 0
-    # prob <- tab[token == "OOV" & tag == obs, prob]
+    prob <- tab[token == "OOV" & tag == obs, prob]
   }
   return(prob)
 }
