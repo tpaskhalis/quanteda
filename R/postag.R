@@ -46,7 +46,7 @@ postag.corpus <- function(x, method = c("perceptron", "hmm")) {
 #' @examples 
 #' @export
 trainHMM <- function(labeled, alpha = 0.1) {
-  if (is.list(labeled) && is.null(dim(labeled))) {
+  if (is.list(labeled) & is.null(dim(labeled))) {
     tokens <- unlist(lapply(labeled, "[[", 1))
     tags <- unlist(lapply(labeled, "[[", 2))
   }
@@ -153,12 +153,11 @@ mleTokenTag <- function(tokens, tags, alpha = 0.1) {
 # morphology of unknown words or differing prior probabilities for different 
 # parts of speech.
 getStateObsProb <- function(state, obs, tab) {
-  prob <- tab[token == state & tag == obs, prob]
-  if (length(prob) == 0) {
-    prob <- 0
-    prob <- tab[token == "OOV" & tag == obs, prob]
+  obsprob <- tab[token == state & tag == obs, prob]
+  if (length(obsprob) == 0) {
+    obsprob <- tab[token == "OOV" & tag == obs, prob]
   }
-  return(prob)
+  return(obsprob)
 }
 
 # Maximum Likelihood estimator for calculating the between-tag transition.
@@ -183,8 +182,10 @@ mleTagTransition <- function(dttags) {
 # Populate transition probability matrix with unseen tag transitions.
 buildTransitionProbabilityMatrix <- function(dt) {
   # Generate all permutations of tags
-  uniquetags <- unique(dt[, previous])
-  transitions <- data.table(expand.grid(tag = uniquetags, previous = uniquetags))
+  # Make sure NA isn't a valid tag, only start state
+  starttags <- unique(dt[, previous])
+  uniquetags <- unique(dt[, tag])
+  transitions <- data.table(expand.grid(tag = uniquetags, previous = starttags))
   setkey(transitions, tag, previous)
   setkey(dt, tag, previous)
   
